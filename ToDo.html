@@ -1,99 +1,42 @@
-var dt = new Date();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 
-var months = ["January", 
-    "February",
-    "March", 
-    "April", 
-    "May", 
-    "June", 
-    "July", 
-    "August", 
-    "September", 
-    "October",
-    "November", 
-    "December"];
+    <a href="index.html"><i class="fa fa-backward" aria-hidden="true" style="width: 100%; align-items: center; text-align: center;"></i></a>
 
-function addEv() {
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="ToDo.html" class="active">To-Do List</a>
+        <br>
+        <a href="Finance.html">Expense Tracker</a>
+        <br>
+        <a href="Notes.html">Notes</a>
+        <br>
+        <a href="Gallery.html">Gallery</a>
+        <br>
+      </div>
+      
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">☰</button>  
+    </div>
 
-    let days = document.querySelectorAll('.day');
+    <script>function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+    </script> 
     
-    for(let i = 0 ; i < days.length; i++) {
-        days[i].addEventListener('click', event => {
-            let dateStr = document.querySelector('#date_str');
-            let day = event.target.innerHTML;
-            let year = dateStr.innerHTML.split(' ').pop();
-            let mon = months.indexOf(document.querySelector('#Month').innerHTML);
-            
-            if(event.target.classList.contains('prev_date')) {
-
-                mon = (mon ? mon : months.length) - 1;
-
-                year = (mon === months.length -1) ? year - 1 : year;
-                                
-            }
-
-            let clickedDay = new Date(year,mon,day);
-
-            dateStr.innerHTML = clickedDay.toDateString();
-        });
-    }
-
-}
-
-
-function RenderDate() {
-    
-dt.setDate(1);
-var day = dt.getDay();
-console.log(dt.getDay());
-
-var edate = new Date(
-
-    dt.getFullYear(),
-    dt.getMonth() + 1,
-    0
-).getDate();
-
-var pdate = new Date(
-    dt.getFullYear(),
-    dt.getMonth(),
-    0
-).getDate();
-
-var today = new Date();
-
-
-document.getElementById("date_str").innerHTML = dt.toDateString();
-document.getElementById("Month").innerHTML = months[dt.getMonth()];
-
-var cells = "";
-for(x = day; x>0; x--){
-    cells+= "<div class = 'prev_date day'>" + (pdate-x+1) + "</div>";
-}
-for(i = 1; i<=edate; i++){
-   if(i==today.getDate() && dt.getMonth() == today.getMonth()){
-    cells+= "<div class = 'Today day'>" + i + "</div>";
-   }
-   else{
-    cells+= "<div class='day'>" + i + "</div>";
-   }
-}
-document.getElementsByClassName("days")[0].innerHTML = cells;
-
-addEv();
-}
-
-function moveDate(para){
-    if(para == 'previous'){
-        dt.setMonth(dt.getMonth()-1);
-        
-    }
-    else if(para == 'next'){
-        dt.setMonth(dt.getMonth()+1);
-        
-    }
-    RenderDate();
-
-}
-
-
+</body>
+</html>
