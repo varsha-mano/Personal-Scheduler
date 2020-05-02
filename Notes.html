@@ -6,6 +6,7 @@
     <title>Notes</title>
     <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/note.css">
 </head>
 <body>
 
@@ -26,7 +27,9 @@
     <div id="main">
         <button class="openbtn" onclick="openNav()">☰</button>  
     </div>
+    <textarea name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')">Enter your comment here...</textarea>
 
+    
     <script>function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
@@ -37,6 +40,8 @@
         document.getElementById("main").style.marginLeft= "0";
       }
     </script>
+
+    <script src="./assets/js/note.js"></script>
     
 </body>
 </html>
