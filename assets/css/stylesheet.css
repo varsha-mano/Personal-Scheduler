@@ -4,6 +4,12 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow: hidden;
+    background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
+    radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+    background-size: 110px 200px;
+    background-repeat: repeat-x;
 }
 *{
     margin: 0;
@@ -14,7 +20,7 @@ body{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color:#dfe6e9;
+    /* background-color:#dfe6e9; */
     
 
 }

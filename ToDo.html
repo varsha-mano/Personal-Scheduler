@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/todo.css">
+    <link rel="stylesheet" href="assets/css/fontAwsum/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontAwsum/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/fontAwsum/solid.min.css">
 </head>
 <body>
 
-    <a href="index.html"><i class="fa fa-backward" aria-hidden="true" style="width: 100%; align-items: center; text-align: center;"></i></a>
 
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="ToDo.html" class="active">To-Do List</a>
+        <a href="ToDo.html"><i class="fa fa-clipboard-list"></i> To-Do List</a>
         <br>
-        <a href="Finance.html">Expense Tracker</a>
+        <a href="Finance.html"><i class="fas fa-money-check-alt"></i> Finance</a>
         <br>
-        <a href="Notes.html">Notes</a>
+        <a href="Notes.html"><i class="fas fa-comments"></i> Notes</a>
         <br>
-        <a href="Gallery.html">Gallery</a>
+        <a href="Gallery.html"><i class="fas fa-photo-video"></i> Gallery</a>
         <br>
       </div>
       
     <div id="main">
         <button class="openbtn" onclick="openNav()">☰</button>  
+        <a href="index.html" class="main-menu">Home</a>
     </div>
 
     <div class="container">
@@ -38,11 +40,6 @@
         <div class="content">
             <ul id="list">
                
-                <!-- <li class="item">
-                    <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                    <p class="text">Drink Coffee</p>
-                    <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                </li> -->
             </ul>
         </div>
         <div class="add-to-do">
@@ -53,12 +50,12 @@
 
     <script>function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+
       }
       
       function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+
       }
     </script> 
     <script src="./assets/js/todo.js"></script>

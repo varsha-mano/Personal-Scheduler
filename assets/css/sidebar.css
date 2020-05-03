@@ -9,7 +9,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: blue;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -19,13 +19,18 @@ body{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: black;
+    font-style: arial;
+    font-weight: bolder;
     display: block;
     transition: 0.3s;
   }
   
   .sidebar a:hover {
-    color: #e720c6;
+    color: #48B;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
   }
   
   .sidebar .closebtn {
@@ -35,7 +40,15 @@ body{
     font-size: 36px;
     margin-left: 50px;
   }
-  
+
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+    width:100%;
+    display: flex;
+    background-color: #fff;
+  }
+
   .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -49,10 +62,18 @@ body{
     background-color: #444;
   }
   
-  #main {
-    transition: margin-left .5s;
-    padding: 16px;
+
+
+  .main-menu {
+    margin-left: auto;
+    margin-right: 2rem;
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    
+    color: #fff;
+    background-color: #111;
   }
+
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
